@@ -1,0 +1,17 @@
+div.contenu h1, div.contenu h2 {
+    text-align: center;
+}
+
+div.contenu h1 {
+    color: green;
+}
+
+div.contenu h2 {
+    color: darkgreen;
+}
+
+img.banner {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+}
