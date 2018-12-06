@@ -1,3 +1,22 @@
+body {
+    background-image: url("../img/website_background.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
 nav.nav_welcome {
-    color: #99bbff;
+    color: #ff9933;
+}
+
+nav.nav_info {
+    color: #ffbf80;
+}
+
+nav.nav_info a {
+    font-size: 17px;
+}
+
+nav.nav_info a.nothing, nav.nav_info a.nothing:hover {
+    color: #adebad;
 }

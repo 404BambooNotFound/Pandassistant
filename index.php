@@ -10,6 +10,7 @@ include 'PHP/connectDB.php';
 
 ?>
 
+
 <html>
     <head>
         <title><?php echo $websiteName ?> - About</title>
@@ -26,32 +27,43 @@ include 'PHP/connectDB.php';
     <body>
         <div class="row">
             <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav_welcome">
+                <nav class="navbar navbar-dark bg-dark nav_welcome">
                     <a class="navbar-brand">Bienvenue, <?php echo $userName; ?> !</a>
 
-
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <form class="form-inline my-2 my-lg-0">
-                                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Télé-Assistance</button>
-                            </form>
-                        </li>
-                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Télé-Assistance</button>
+                    </form>
                 </nav>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-dark bg-secondary nav_info">
+                    <a class="navbar-brand">18°C - Temps dégagé.</a>
 
-            <div class="row">
-                <div class="col-md-2"></div>
+                    <a class="navbar-brand nothing">Aucun danger en prévision, soyez rassuré.</a>
 
-                <div class="col-md-8 contenu">
-
-
-
-
-                </div>
-
-                <div class="col-md-2"></div>
+                    <form class="form-inline my-2 my-lg-0">
+                        <a class="navbar-brand" id="hours">
+                        </a>
+                    </form>
+                </nav>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8 contenu">
+
+
+
+
+            </div>
+
+            <div class="col-md-2"></div>
+        </div>
     </body>
+
+    <script src="js/displayHour.js"></script>
 </html>
+
