@@ -48,12 +48,13 @@ include 'PHP/connectDB.php';
     <div class="col-md-4">
 
         <h1 id="coord" style="padding-left: 20px; padding-top: 20px">My First Google Map</h1>
+        <h1 hidden id="departure"></h1>
 
         <div id="googleMap" style="width:100%;height:600px;"></div>
 
         <script>
 
-            var pos;
+            var pos, directionsDisplay, directionsService;
 
             function myMap() {
                 var mapProp = {
@@ -62,6 +63,8 @@ include 'PHP/connectDB.php';
                 };
                 var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
                 var infoWindow = new google.maps.InfoWindow;
+                directionsDisplay = new google.maps.DirectionsRenderer;
+                directionsService = new google.maps.DirectionsService;
 
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function (position) {
@@ -87,6 +90,8 @@ include 'PHP/connectDB.php';
 
                 var marker = new google.maps.Marker({position: pos});
                 marker.setMap(map);
+
+                directionsDisplay.setMap(map);
             }
 
             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -115,7 +120,7 @@ include 'PHP/connectDB.php';
             function geocodeLatLng(lat, lng, map, infowindow) {
                 var latlng = {lat: parseFloat(lat), lng: parseFloat(lng)};
                 var geocoder = new google.maps.Geocoder;
-                geocoder.geocode({'location': latlng}, function(results, status) {
+                geocoder.geocode({'location': latlng}, function (results, status) {
                     if (status === 'OK') {
                         if (results[0]) {
                             map.setZoom(11);
@@ -126,6 +131,7 @@ include 'PHP/connectDB.php';
                             infowindow.setContent(results[0].formatted_address);
                             infowindow.open(map, marker);
                             document.getElementById("location").textContent = results[3].formatted_address;
+                            document.getElementById("departure").textContent = results[0].formatted_address;
                         } else {
                             window.alert('No results found');
                         }
@@ -134,6 +140,22 @@ include 'PHP/connectDB.php';
                     }
                 });
             }
+
+            function calculateAndDisplayRoute() {
+                directionsService.route({
+                    origin: document.getElementById("departure").textContent,
+                    destination: document.getElementById('destination').value,
+                    travelMode: 'DRIVING'
+                }, function (response, status) {
+                    if (status === 'OK') {
+                        directionsDisplay.setDirections(response);
+                        document.getElementById("traveltime").textContent = "Temps de trajet estimé : " + response.routes[0].legs[0].duration.text;
+                    } else {
+                        window.alert('Directions request failed due to ' + status);
+                    }
+                });
+            }
+
 
         </script>
 
@@ -161,7 +183,7 @@ include 'PHP/connectDB.php';
                                 </div>
                             </div> <!-- .forecast-header -->
                             <div class="forecast-content">
-                                <div id="location" class="location">blblbllb</div>
+                                <div id="location" class="location"></div>
                                 <div class="degree">
                                     <div class="num">23<sup>o</sup>C</div>
                                     <div class="forecast-icon">
@@ -261,6 +283,13 @@ include 'PHP/connectDB.php';
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="container" style="padding-top: 20px">
+                    <form action="#" class="find-location">
+                        <input id="destination" type="text" placeholder="Find your location...">
+                        <input type="submit" value="Find" onclick="calculateAndDisplayRoute()">
+                    </form>
+                    <h1 id="traveltime"style="padding-left: 30px"> </h1>
                 </div>
             </div>
         </div>
