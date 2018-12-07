@@ -25,31 +25,11 @@ include 'PHP/connectDB.php';
     </head>
 
     <body>
-        <div class="row nav_fill">
-            <div class="col-md-12 without_padding">
-                <nav class="navbar navbar-dark bg-dark nav_welcome">
-                    <a class="navbar-brand">Bienvenue, <?php echo $userName; ?> !</a>
+    <?php
+        include 'PHP/mainNavbar.php';
+        include 'PHP/secondaryNavbar.php';
+    ?>
 
-                    <form class="form-inline my-2 my-lg-0">
-                        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Télé-Assistance</button>
-                    </form>
-                </nav>
-            </div>
-        </div>
-        <div class="row nav_fill">
-            <div class="col-md-12 without_padding">
-                <nav class="navbar navbar-dark bg-secondary nav_info">
-                    <a class="navbar-brand">18°C - Temps dégagé.</a>
-
-                    <a class="navbar-brand nothing">Aucun danger en prévision, soyez rassuré.</a>
-
-                    <form class="form-inline my-2 my-lg-0">
-                        <a class="navbar-brand" id="hours">
-                        </a>
-                    </form>
-                </nav>
-            </div>
-        </div>
         <div class="row nav_fill">
             <div class="col-md-2"></div>
 
