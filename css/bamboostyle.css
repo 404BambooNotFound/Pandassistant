@@ -35,18 +35,3 @@ div.nav_fill {
     width:100%;
     margin: 0;
 }
-
-/* Thomas' Style */
-
-div.home_tile {
-    background-color: blue;
-    height: 200px;
-    margin:5%;
-    border-radius:10px;
-    box-shadow: yellow 1px 1px;
-}
-
-div.home_tile:hover {
-    background-color: darkblue;
-    box-shadow: darkyellow 1px 1px;
-}
