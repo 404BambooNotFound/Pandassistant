@@ -25,8 +25,8 @@ include 'PHP/connectDB.php';
     </head>
 
     <body>
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row nav_fill">
+            <div class="col-md-12 without_padding">
                 <nav class="navbar navbar-dark bg-dark nav_welcome">
                     <a class="navbar-brand">Bienvenue, <?php echo $userName; ?> !</a>
 
@@ -36,8 +36,8 @@ include 'PHP/connectDB.php';
                 </nav>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row nav_fill">
+            <div class="col-md-12 without_padding">
                 <nav class="navbar navbar-dark bg-secondary nav_info">
                     <a class="navbar-brand">18°C - Temps dégagé.</a>
 
@@ -50,7 +50,7 @@ include 'PHP/connectDB.php';
                 </nav>
             </div>
         </div>
-        <div class="row">
+        <div class="row nav_fill">
             <div class="col-md-2"></div>
 
             <div class="col-md-8 contenu">

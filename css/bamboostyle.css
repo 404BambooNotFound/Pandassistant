@@ -2,15 +2,21 @@ body {
     background-image: url("../img/website_background.jpg");
     background-position: center;
     background-attachment: fixed;
-    background-size: 100%;
+    background-repeat: no-repeat;
+    /*background-size: 100% auto;*/
+    background-size: cover;
 }
 
 nav.nav_welcome {
+    margin:0;
     color: #ff9933;
+    background-color: rgba(52, 58, 64, 0.9)!important;
 }
 
 nav.nav_info {
+    margin:0;
     color: #ffbf80;
+    background-color: rgba(108, 117, 125, 0.9)!important;
 }
 
 nav.nav_info a {
@@ -19,4 +25,13 @@ nav.nav_info a {
 
 nav.nav_info a.nothing, nav.nav_info a.nothing:hover {
     color: #adebad;
+}
+
+div.without_padding {
+    padding: 0;
+}
+
+div.nav_fill {
+    width:100%;
+    margin: 0;
 }
