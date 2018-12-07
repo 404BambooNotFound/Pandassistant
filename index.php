@@ -31,16 +31,15 @@ include 'PHP/connectDB.php';
     ?>
 
         <div class="row nav_fill">
-            <div class="col-md-2"></div>
+            <div class="col-md-4"></div>
 
-            <div class="col-md-8 contenu">
-
-
-
-
+            <div class="col-md-4 contenu">
+                <div class="home_tile">
+                    <h3>Enter in the cockpit</h3>
+                </div>
             </div>
 
-            <div class="col-md-2"></div>
+            <div class="col-md-4"></div>
         </div>
     </body>
 
