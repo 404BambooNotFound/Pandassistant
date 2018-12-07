@@ -14,5 +14,5 @@ try {
     die();
 }
 
-$websiteName = "404Bamboo";
+$websiteName = "Pandassistant";
 $userName = "Yannick";

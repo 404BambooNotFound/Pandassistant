@@ -1,3 +1,91 @@
+body {
+    background-image: url("../img/website_background.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /*background-size: 100% auto;*/
+    background-size: cover;
+}
+
 nav.nav_welcome {
-    color: #99bbff;
+    margin:0;
+    color: #ff9933;
+    background-color: rgba(52, 58, 64, 0.9)!important;
+}
+
+nav.nav_info {
+    margin:0;
+    color: #ffbf80;
+    background-color: rgba(108, 117, 125, 0.9)!important;
+}
+
+nav.nav_info a {
+    font-size: 17px;
+}
+
+nav.nav_info a.nothing, nav.nav_info a.nothing:hover {
+    color: #adebad;
+}
+
+div.without_padding {
+    padding: 0;
+}
+
+div.nav_fill {
+    width:100%;
+    margin: 0;
+}
+
+div.div_checklist h2 {
+    color: #ff9933;
+    margin-left: 3%;
+}
+
+div.div_checklist h4 {
+    color: #ffbf80;
+}
+
+div.main_container {
+    background-color: rgba(50,50,50,0.5);
+}
+
+table.table_besoins {
+    width:100%;
+    background-color: rgba(50,50,50,0.5);
+}
+
+table.table_besoins tr th {
+    text-align: center;
+    background-color: rgba(255, 153, 51,0.5);
+    color: rgba(255,255,255,0.8);
+}
+
+table.table_besoins tr td {
+    color: #ffbf80;
+}
+
+table.table_besoins tr th.table_libelle, table.table_besoins tr td.table_libelle {
+    width: 76%;
+}
+
+table.table_besoins tr th.table_echeance, table.table_besoins tr td.table_echeance {
+    width: 20%;
+}
+
+table.table_besoins tr th.table_edit, table.table_besoins tr td.table_edit, table.table_besoins tr th.table_remove, table.table_besoins tr td.table_remove {
+    width: 2%;
+}
+
+td.table_edit button, td.table_remove button {
+    background: none;
+    border: none;
+}
+
+div.add_remove {
+    width:100%;
+}
+
+div.add_remove button {
+    width:100%;
+    margin:2%;
 }

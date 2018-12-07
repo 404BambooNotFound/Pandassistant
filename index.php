@@ -10,6 +10,7 @@ include 'PHP/connectDB.php';
 
 ?>
 
+
 <html>
     <head>
         <title><?php echo $websiteName ?> - About</title>
@@ -24,34 +25,24 @@ include 'PHP/connectDB.php';
     </head>
 
     <body>
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav_welcome">
-                    <a class="navbar-brand">Bienvenue, <?php echo $userName; ?> !</a>
+    <?php
+        include 'PHP/mainNavbar.php';
+        include 'PHP/secondaryNavbar.php';
+    ?>
 
+        <div class="row nav_fill">
+            <div class="col-md-4"></div>
 
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <form class="form-inline my-2 my-lg-0">
-                                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Télé-Assistance</button>
-                            </form>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2"></div>
-
-                <div class="col-md-8 contenu">
-
-
-
-
+            <div class="col-md-4 contenu">
+                <div class="home_tile">
+                    <h3>Enter in the cockpit</h3>
                 </div>
-
-                <div class="col-md-2"></div>
             </div>
+
+            <div class="col-md-4"></div>
         </div>
     </body>
+
+    <script src="js/displayHour.js"></script>
 </html>
+
